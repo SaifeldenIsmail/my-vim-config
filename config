@@ -22,13 +22,23 @@ background = #2E3440
 background-alt = #4c566a
 ;foreground = ${xrdb:color7:#222}
 foreground = #D8DEE9
+;background = ${xrdb:color0:#222}
+bg = #2E3440
 
+;foreground = ${xrdb:color7:#222}
+fg = #D8DEE9
+
+fg-alt = #8FBCBB
+
+curgent = #BF616A
+shade2 =#434C5E
+
+acolor = #FFFFFF
+coccupied = #42A5F5
 foreground-alt = #8FBCBB
-
 primary = #ECEFF4
 secondary = #8FBCBB
 alert = #BF616A
-
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -50,17 +60,18 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = SourceCodeProBrand:pixelsize=13;1
 font-1 = SourceCodeProBrand:fontformat=truetype:size=13:antialias=false;0
 font-2 = siji:pixelsize=13;1
+font-3= "Iosevka Nerd Font:pixelsize=14;3"
 
 
-modules-left =i3 
+modules-left =workspaces
 modules-center = xwindow 
-modules-right = pulseaudio alsa xkeyboard memory cpu wlan eth battery date powermenu 
+modules-right = pulseaudio xkeyboard memory cpu battery date powermenu 
 
 tray-position = right 
 tray-padding = 2
@@ -87,13 +98,13 @@ format-underline= #ECEFF4
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-
+format-padding= 3
+format-background  =#434C5E
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -128,9 +139,47 @@ label-urgent-padding = 2
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
+format-background  =#434C5E
 
 ; Separator in between workspaces
 ; label-separator = |
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+format-padding = 2
+
+;icon-0 = 1;❶
+;icon-1 = 2;❷
+;icon-2 = 3;❸
+;icon-3 = 4;❹
+;icon-4 = 5;❺
+;icon-5 = 6;❻
+;icon-6 = 7;❼
+;icon-7 = 8;❽
+;icon-8 = 9;❾
+;icon-9 = 10;❿
+
+icon-default = 
+
+format = <label-state>
+
+format-background  =#434C5E
+label-active = 
+label-occupied = 
+label-urgent = 
+label-empty = 
+
+label-empty-padding = 2
+label-active-padding = 2
+label-urgent-padding = 2
+label-occupied-padding = 2
+
+label-empty-foreground = #D8DEE9 
+label-active-foreground =#FFFFFF 
+label-urgent-foreground =  #BF616A
+label-occupied-foreground = #42A5F5 
 
 [module/i3]
 type = internal/i3
@@ -210,16 +259,18 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ECEFF4
 label = %percentage:2%%
-
+format-padding=3
+format-background  =#434C5E
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 2#3B4252
+format-padding=3
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ECEFF4
 label = %percentage_used%%
+
+format-background  =#3B4252
 
 [module/wlan]
 type = internal/network
@@ -259,10 +310,12 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
+format-background  =#434C5E
 [module/date]
 type = internal/date
 interval = 5
-
+format-padding=3
+format-background  =#434C5E
 date =
 date-alt = " %Y-%m-%d"
 
@@ -271,20 +324,21 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #ECEFF4
 
 label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
-format-volume = <label-volume> <bar-volume>
+format-volume-background=#4C566A
+format-volume-padding=3
+format-volume = <label-volume> 
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
-label-muted-foreground = #666
-
+label-muted-foreground = #FFFFFF
+label-muted-background=#4C566A
+label-muted-padding=3
 bar-volume-width = 10
 bar-volume-foreground-0 = #ECEFF4
 bar-volume-foreground-1 = #ECEFF4
@@ -302,22 +356,24 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+bar-volume-background  =#4C566A
+
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
+format-padding=3
+label-charging-padding-right=3
+label-discharging-padding-right=3
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #
-
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix-foreground = #3B4252
+ 
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -329,6 +385,8 @@ animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
+animation-discharging-padding-left=3
+
 
 animation-discharging-0 = 
 animation-discharging-1 = 
@@ -356,10 +414,12 @@ ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
+format-background  =#3B4252
+
 type = custom/menu
 
 expand-right = true
-
+format-padding=3
 format-spacing = 1
 
 label-open = 
