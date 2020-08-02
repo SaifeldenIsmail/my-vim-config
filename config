@@ -42,7 +42,7 @@ alert = #BF616A
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 26
 ;offset-x = 1%
 ;offset-y = 1%
 radius	 = 0 
@@ -71,12 +71,12 @@ font-3= "Iosevka Nerd Font:pixelsize=14;3"
 
 modules-left =workspaces
 modules-center = xwindow 
-modules-right = pulseaudio xkeyboard memory cpu battery date powermenu 
+modules-right = pulseaudio xkeyboard memory cpu date battery 
 
 tray-position = right 
-tray-padding = 2
-;tray-background = #0063ff
-
+tray-padding = 0
+tray-background = #3B4252
+tray-margin-right=0
 ;wm-restack = bspwm
 ;wm-restack = i3
 
@@ -102,7 +102,6 @@ format-padding= 3
 format-background  =#434C5E
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
 
@@ -111,7 +110,7 @@ label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
-[module/filesystem]
+[module/format-animation-charging=filesystem]
 type = internal/fs
 interval = 25
 
@@ -148,7 +147,7 @@ type = internal/xworkspaces
 pin-workspaces = false
 enable-click = true
 enable-scroll = true
-format-padding = 2
+format-padding = 3
 
 ;icon-0 = 1;❶
 ;icon-1 = 2;❷
@@ -171,10 +170,10 @@ label-occupied = 
 label-urgent = 
 label-empty = 
 
-label-empty-padding = 2
-label-active-padding = 2
-label-urgent-padding = 2
-label-occupied-padding = 2
+label-empty-padding = 3
+label-active-padding = 3
+label-urgent-padding = 3
+label-occupied-padding = 3
 
 label-empty-foreground = #D8DEE9 
 label-active-foreground =#FFFFFF 
@@ -315,7 +314,7 @@ format-background  =#434C5E
 type = internal/date
 interval = 5
 format-padding=3
-format-background  =#434C5E
+format-background  =#3B4252
 date =
 date-alt = " %Y-%m-%d"
 
@@ -364,17 +363,18 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-format-padding=3
-label-charging-padding-right=3
-label-discharging-padding-right=3
-
+format-padding-left=0
+format-padding-right=0
+label-charging-padding-right=1
+label-discharging-padding-right=1
+format-background=#3B4252
 format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 
+
+label-discharging-margin-left=0
 format-full-prefix = " "
 format-full-prefix-foreground = #3B4252
- 
-
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
@@ -386,14 +386,13 @@ animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 animation-discharging-padding-left=3
-
-
+animation-charging-padding-left=3
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
+animation-discharging-foreground = ${colors.alert}
 animation-discharging-framerate = 750
-
+animation-dischargin-margin=0
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
