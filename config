@@ -69,14 +69,13 @@ font-2 = siji:pixelsize=13;1
 font-3= "Iosevka Nerd Font:pixelsize=14;3"
 
 
-modules-left =workspaces
+modules-left =workspaces i3
 modules-center = xwindow 
 modules-right = pulseaudio xkeyboard memory cpu date battery 
 
 tray-position = right 
-tray-padding = 0
+tray-padding= 10
 tray-background = #3B4252
-tray-margin-right=0
 ;wm-restack = bspwm
 ;wm-restack = i3
 
@@ -105,10 +104,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 label-layout = %layout%
 
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+label-indicator-padding= 3
 
 [module/format-animation-charging=filesystem]
 type = internal/fs
@@ -182,7 +178,7 @@ label-occupied-foreground = #42A5F5
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format = <label-mode>
 index-sort = true
 wrapping-scroll = false
 
@@ -190,8 +186,8 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-foreground =${colors.foreground} 
+label-mode-background = #3B4252
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
@@ -263,7 +259,7 @@ format-padding=3
 format-background  =#434C5E
 [module/memory]
 type = internal/memory
-interval = 2#3B4252
+interval = 2
 format-padding=3
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
@@ -374,7 +370,10 @@ format-discharging = <animation-discharging> <label-discharging>
 
 label-discharging-margin-left=0
 format-full-prefix = " "
-format-full-prefix-foreground = #3B4252
+format-full-prefix-foreground = ${colors.foreground}
+format-full-prefix-padding-left=3
+
+
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
