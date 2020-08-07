@@ -11,6 +11,8 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'sickill/vim-monokai'
 Plug 'sainnhe/gruvbox-material'
 Plug 'arcticicestudio/nord-vim'
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
  
@@ -24,11 +26,4 @@ map <S-n> :tabn<CR>
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ }
-inoremap " ""<left> 
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-
-
 
