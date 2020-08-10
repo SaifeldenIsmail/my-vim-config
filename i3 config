@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -50,7 +50,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 #
 bindsym $mod+d exec rofi -show run 
-bindsym $mod+Tab exec rofi -show window -show-icons 
+bindsym $mod+Tab exec rofi -show window 
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -147,7 +147,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "bash ~/.config/rofi/powermenu.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -186,7 +186,8 @@ set $bg-color 	         #2E3440
 set $inactive-bg-color   #2E3440
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $urgent-bg-color     #BF616A
+
 
 # window colors
 #                       border              background         text                 indicator
@@ -211,9 +212,12 @@ exec polybar example &
 
 
 
-gaps inner 5 
-gaps outer 5 
+gaps inner 7 
+gaps outer 0 
 exec compton
 exec redshift-gtk
 
 new_window pixel 0
+
+
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'

@@ -35,7 +35,7 @@ shade2 =#434C5E
 
 acolor = #FFFFFF
 coccupied = #42A5F5
-foreground-alt = #8FBCBB
+foreground-alt = #FFFFFF
 primary = #ECEFF4
 secondary = #8FBCBB
 alert = #BF616A
@@ -62,19 +62,18 @@ padding-right = 2
 
 module-margin-left = 0
 module-margin-right = 0
+font-0=Hack:pixelsize=13;3
+font-3=SourceCodeProBrand:pixelsize=13:1
+font-1 = siji:pixelsize=13;1
+font-2= "Iosevka Nerd Font:pixelsize=15;3"
 
-font-0 = SourceCodeProBrand:pixelsize=13;1
-font-1 = SourceCodeProBrand:fontformat=truetype:size=13:antialias=false;0
-font-2 = siji:pixelsize=13;1
-font-3= "Iosevka Nerd Font:pixelsize=14;3"
 
-
-modules-left =workspaces i3
-modules-center = xwindow 
+modules-left = menu workspaces i3
+modules-center = 
 modules-right = pulseaudio xkeyboard memory cpu date battery 
 
 tray-position = right 
-tray-padding= 10
+tray-padding= 8 
 tray-background = #3B4252
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -97,14 +96,14 @@ format-underline= #ECEFF4
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-format-padding= 3
+format-padding= 1
 format-background  =#434C5E
-format-prefix = " "
+format-prefix = "KEYB "
 format-prefix-foreground = ${colors.foreground-alt}
 
 label-layout = %layout%
 
-label-indicator-padding= 3
+label-indicator-padding= 0
 
 [module/format-animation-charging=filesystem]
 type = internal/fs
@@ -115,7 +114,14 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+[module/menu]
+type = custom/text
+content = 
 
+content-padding = 2
+content-background =#4C566A
+content-foreground = #FFFFFF  
+click-left = rofi -show run
 [module/bspwm]
 type = internal/bspwm
 
@@ -143,7 +149,7 @@ type = internal/xworkspaces
 pin-workspaces = false
 enable-click = true
 enable-scroll = true
-format-padding = 3
+format-padding = 1
 
 ;icon-0 = 1;❶
 ;icon-1 = 2;❷
@@ -166,10 +172,10 @@ label-occupied = 
 label-urgent = 
 label-empty = 
 
-label-empty-padding = 3
-label-active-padding = 3
-label-urgent-padding = 3
-label-occupied-padding = 3
+label-empty-padding = 1
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
 
 label-empty-foreground = #D8DEE9 
 label-active-foreground =#FFFFFF 
@@ -252,16 +258,16 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage:2%%
-format-padding=3
+format-padding=1
 format-background  =#434C5E
 [module/memory]
 type = internal/memory
 interval = 2
-format-padding=3
-format-prefix = " "
+format-padding=1
+format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
@@ -309,7 +315,7 @@ format-background  =#434C5E
 [module/date]
 type = internal/date
 interval = 5
-format-padding=3
+format-padding=1
 format-background  =#3B4252
 date =
 date-alt = " %Y-%m-%d"
@@ -317,7 +323,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = TIME
 format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
@@ -325,7 +331,7 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume-background=#4C566A
-format-volume-padding=3
+format-volume-padding=1
 format-volume = <label-volume> 
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
@@ -333,7 +339,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 🔇 muted
 label-muted-foreground = #FFFFFF
 label-muted-background=#4C566A
-label-muted-padding=3
+label-muted-padding=2
 bar-volume-width = 10
 bar-volume-foreground-0 = #ECEFF4
 bar-volume-foreground-1 = #ECEFF4
@@ -361,35 +367,37 @@ adapter = ADP1
 full-at = 98
 format-padding-left=0
 format-padding-right=0
-label-charging-padding-right=1
-label-discharging-padding-right=1
+label-charging-padding-right=0
+label-discharging-padding-right=0
 format-background=#3B4252
 format-charging = <animation-charging> <label-charging>
 format-discharging = <animation-discharging> <label-discharging>
 
 
 label-discharging-margin-left=0
-format-full-prefix = " "
+format-full-prefix = "[\\\] "
 format-full-prefix-foreground = ${colors.foreground}
-format-full-prefix-padding-left=3
+format-full-prefix-padding-left=1
 
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 =[\\\] 
+ramp-capacity-1 =[\\ ] 
+ramp-capacity-2 =[\  ]
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-2 =[\\\] 
+animation-charging-1 =[\\ ]
+animation-charging-0 =[\  ]
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
-animation-discharging-padding-left=3
-animation-charging-padding-left=3
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.alert}
+animation-discharging-padding-left=1
+animation-charging-padding-left=1
+animation-discharging-0 =[\\\]
+animation-discharging-1 =[\\ ]
+animation-discharging-2 =[\  ]
+
+animation-discharging-foreground = #D08770
+
 animation-discharging-framerate = 750
 animation-dischargin-margin=0
 [module/temperature]
