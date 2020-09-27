@@ -42,7 +42,7 @@ alert = #BF616A
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 26
+height = 23
 ;offset-x = 1%
 ;offset-y = 1%
 radius	 = 0 
@@ -58,7 +58,6 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
 
 module-margin-left = 0
 module-margin-right = 0
@@ -68,11 +67,13 @@ font-1 = siji:pixelsize=13;1
 font-2= "Iosevka Nerd Font:pixelsize=15;3"
 
 
-modules-left = menu workspaces i3
-modules-center = 
-modules-right = pulseaudio xkeyboard memory cpu date battery 
+modules-left =i3
+modules-center = xwindow
+modules-right =pulseaudio memory cpu date battery 
 
-tray-position = right 
+tray-margin=0
+;tray-position = right 
+
 tray-padding= 8 
 tray-background = #3B4252
 ;wm-restack = bspwm
@@ -83,7 +84,7 @@ tray-background = #3B4252
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
+;scroll-up = 3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
@@ -91,8 +92,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
-format-underline= #ECEFF4
+label = %title:0:35:...%
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -128,18 +128,18 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 format-background  =#434C5E
 
 ; Separator in between workspaces
@@ -184,7 +184,7 @@ label-occupied-foreground = #42A5F5
 
 [module/i3]
 type = internal/i3
-format = <label-mode>
+format = <label-state><label-mode>
 index-sort = true
 wrapping-scroll = false
 
@@ -198,13 +198,13 @@ label-mode-background = #3B4252
 ; focused = Active workspace on focused monitor
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= 
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = 2
-
+label-unfocused-background=#3B4252
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
@@ -218,8 +218,6 @@ label-urgent-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
-
-
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -339,7 +337,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 🔇 muted
 label-muted-foreground = #FFFFFF
 label-muted-background=#4C566A
-label-muted-padding=2
+label-muted-padding=1
 bar-volume-width = 10
 bar-volume-foreground-0 = #ECEFF4
 bar-volume-foreground-1 = #ECEFF4
@@ -367,17 +365,27 @@ adapter = ADP1
 full-at = 98
 format-padding-left=0
 format-padding-right=0
-label-charging-padding-right=0
-label-discharging-padding-right=0
-format-background=#3B4252
-format-charging = <animation-charging> <label-charging>
-format-discharging = <animation-discharging> <label-discharging>
+format-background=#434C5E
+format-charging =  <label-charging>
+format-discharging = <label-discharging>
+format-charging-prefix="CHARGING "
+label-charging-background=#4C566A
+label-discharging-padding-right=1
 
-
+format-charging-prefix-padding-left=1
+format-discharging-prefix-padding-left=1
+label-charging-padding-right=1
+label-discharging-background=#4C566A
+format-discharging-prefix="DISCHARGING "
+format-discharging-prefix-background=#4C566A
+format-charging-prefix-foreground=${colors.foreground}
+format-charging-prefix-background=#4C566A
+format-discharing-prefix-background=#4C566A
 label-discharging-margin-left=0
-format-full-prefix = "[\\\] "
+format-full-prefix = "BAT FULL "
+format-full-padding=1
 format-full-prefix-foreground = ${colors.foreground}
-format-full-prefix-padding-left=1
+format-full-background=#4C566A
 
 
 ramp-capacity-0 =[\\\] 
@@ -425,7 +433,7 @@ format-background  =#3B4252
 type = custom/menu
 
 expand-right = true
-format-padding=3
+format-padding=1
 format-spacing = 1
 
 label-open = 
