@@ -37,22 +37,23 @@ colors:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Hack 
+    family: MesloLGS NF
     # Style can be specified to pick a specific face.
     style: Regular
    
-  size: 13
+  size: 12
 
-  # The bold font face
+  #The bold font face
   bold:
-    family: Hack 
+    family: MesloLGS NF
     style: Bold
     # Style can be specified to pick a specific face.
     
 
   # The italic font face
   italic:
-    family: Source Code Pro 
+    family: MesloLGS NF
+    style: Italic
     # Style can be specified to pick a specific face.
   
 background_opacity: 1.00 
