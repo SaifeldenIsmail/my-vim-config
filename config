@@ -42,7 +42,7 @@ alert = #BF616A
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 23
+height = 21
 ;offset-x = 1%
 ;offset-y = 1%
 radius	 = 0 
@@ -61,14 +61,13 @@ padding-left = 0
 
 module-margin-left = 0
 module-margin-right = 0
-font-0=Hack:pixelsize=13;3
-font-3=SourceCodeProBrand:pixelsize=13:1
-font-1 = siji:pixelsize=13;1
-font-2= "Iosevka Nerd Font:pixelsize=15;3"
+font-0=Hack:pixelsize=12;3
+font-2=Hack:pixelsize=12:1
+font-1 = Hack:pixelsize=12;1
 
 
 modules-left =i3
-modules-center = xwindow
+modules-center = 
 modules-right =pulseaudio memory cpu date battery 
 
 tray-margin=0
