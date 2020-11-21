@@ -42,33 +42,35 @@ alert = #BF616A
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 21
+border-bottom-size = 2
+border-bottom-color = #4c566a
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
 radius	 = 0 
 fixed-center = false
 
-background = ${colors.background}
+background = ${colors.background} 
+
+ 
 foreground = ${colors.foreground}
 
 line-size = 4 
 line-color = #ECEFF4
 
-border-size = 0 
-border-color = #00000000
 
 padding-left = 0
 
 module-margin-left = 0
 module-margin-right = 0
-font-0=Hack:pixelsize=12;3
-font-2=Hack:pixelsize=12:1
-font-1 = Hack:pixelsize=12;1
+font-0=Hack:pixelsize=12.5;3
+font-2=Hack:pixelsize=12.5:1
+font-1 = Hack:pixelsize=12.5;1
 
 
 modules-left =i3
 modules-center = 
-modules-right =pulseaudio memory cpu date battery 
+modules-right =pulseaudio memory cpu battery date
 
 tray-margin=0
 ;tray-position = right 
@@ -198,12 +200,14 @@ label-mode-background = #3B4252
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= 
+
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
 label-unfocused-padding = 2
 label-unfocused-background=#3B4252
+
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
@@ -313,7 +317,8 @@ format-background  =#434C5E
 type = internal/date
 interval = 5
 format-padding=1
-format-background  =#3B4252
+format-background  =#434C5E
+
 date =
 date-alt = " %Y-%m-%d"
 
@@ -327,7 +332,7 @@ label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-format-volume-background=#4C566A
+format-volume-background=#434C5E
 format-volume-padding=1
 format-volume = <label-volume> 
 label-volume = VOL %percentage%%
@@ -364,27 +369,33 @@ adapter = ADP1
 full-at = 98
 format-padding-left=0
 format-padding-right=0
+
+
 format-background=#434C5E
 format-charging =  <label-charging>
 format-discharging = <label-discharging>
 format-charging-prefix="CHARGING "
-label-charging-background=#4C566A
+label-charging-background=#3B4252
+3B4252
+
 label-discharging-padding-right=1
 
 format-charging-prefix-padding-left=1
 format-discharging-prefix-padding-left=1
 label-charging-padding-right=1
-label-discharging-background=#4C566A
+label-discharging-background=#3B4252
+
 format-discharging-prefix="DISCHARGING "
-format-discharging-prefix-background=#4C566A
+
+format-discharging-prefix-background=#3B4252
 format-charging-prefix-foreground=${colors.foreground}
-format-charging-prefix-background=#4C566A
-format-discharing-prefix-background=#4C566A
+format-charging-prefix-background=#3B4252
+format-discharing-prefix-background=#3B4252
 label-discharging-margin-left=0
 format-full-prefix = "BAT FULL "
 format-full-padding=1
 format-full-prefix-foreground = ${colors.foreground}
-format-full-background=#4C566A
+format-full-background=#3B4252
 
 
 ramp-capacity-0 =[\\\] 
