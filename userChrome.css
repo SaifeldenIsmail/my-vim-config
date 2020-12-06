@@ -49,9 +49,8 @@ toolbar #tabs-newtab-button {
 }
 
 toolbar #tabs-newtab-button > .toolbarbutton-icon {
-  margin: 2px !important;
-  width: calc(2 * var(--toolbarbutton-inner-padding) + 12px) !important;
-  height: calc(2 * var(--toolbarbutton-inner-padding) + 12px) !important;
+  border-radius: 2px !important;  
+  
 }
 
 .tabbrowser-tab::after,
@@ -88,7 +87,7 @@ toolbar #tabs-newtab-button > .toolbarbutton-icon {
 .tab-line {
   display: none !important;
 }
-        #forward-button {
+/*        #forward-button {
                 list-style-image: url(image/right-arrow.svg) !important;
         }
         #back-button {
@@ -107,7 +106,7 @@ toolbar #tabs-newtab-button > .toolbarbutton-icon {
                  box-shadow: none !important;
                  background-color: var(--toolbarbutton-hover-background) !important;
          }
-
+*/
 toolbar .toolbarbutton-1 {
   margin-left: 4px !important;
   margin-right: 4px !important;
