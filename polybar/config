@@ -41,11 +41,16 @@ alert = #BF616A
 
 [bar/example]
 
+
+;Adjust the _NET_WM_STRUT_PARTIAL top value
+;Used for top aligned bars
+;Adjust the _NET_WM_STRUT_PARTIAL bottom value
+;Used for bottom aligned bars
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 border-bottom-size = 0
 border-bottom-color = #4c566a
-height = 22
+height = 23
 ;offset-x = 1%
 ;offset-y = 1%
 radius	 = 0 
@@ -61,13 +66,15 @@ line-color = #ECEFF4
 
 
 padding-left = 0
-
 module-margin-left = 0
 module-margin-right = 0
-font-0=Source Code Pro:pixelsize=12;3
+
+font-0=Source Code Pro:pixelsize=12;2
+font-1=Iosevka Nerd Font:pixelsize=14;3
 
 
-modules-left =i3
+
+modules-left = workspaces 
 modules-center = 
 modules-right =pulseaudio battery date
 
@@ -76,10 +83,10 @@ tray-margin=0
 
 tray-padding= 8 
 tray-background = #3B4252
-;wm-restack = bspwm
-;wm-restack = i3
+;wm-restack = workspaces
 
-;override-redirect = true
+wm-restack = bspwm
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -98,7 +105,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 format-padding= 1
 format-background  =#434C5E
-format-prefix = "KEYB "
+format-prefix = "Keyb "
 format-prefix-foreground = ${colors.foreground-alt}
 
 label-layout = %layout%
@@ -129,9 +136,9 @@ format = <label-state>
 
 format-background  =#434C5E
 label-active = 
-label-occupied = 
+label-occupied = 
 label-urgent = 
-label-empty = 
+label-empty =  
 
 label-empty-padding = 1
 label-active-padding = 1
@@ -139,9 +146,9 @@ label-urgent-padding = 1
 label-occupied-padding = 1
 
 label-empty-foreground = #D8DEE9 
-label-active-foreground =#FFFFFF 
-label-urgent-foreground =  #BF616A
-label-occupied-foreground = #42A5F5 
+label-active-foreground =#d8dee9
+label-urgent-foreground =  #bf616a
+label-occupied-foreground =#d8dee9 
 
 [module/i3]
 type = internal/i3
@@ -219,7 +226,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-label =" CPU %percentage:2%% "
+label =" Cpu %percentage:2%% "
 format-background  =#434C5E
 background-next= #3B4252
 background=#434C5E
@@ -228,7 +235,7 @@ background=#434C5E
 type = internal/memory
 interval = 2
 format-padding=0
-label =" RAM %percentage_used%% "
+label =" Ram %percentage_used%% "
 background=#3B4252
 
 background-next= #434C5E
@@ -281,7 +288,7 @@ background=#4c566a
 background-next=#3B4252
 
 date = Time 
-date-alt = "%Y/%m/%d %A"
+date-alt = "%A %Y/%m/%d"
 
 time = %H:%M
 time-alt = %H:%M
@@ -292,6 +299,7 @@ label =" %date% %time% "
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume-background=#3b4252
+
 background         = #3b4252
 
 background-next    =${colors.background}
@@ -301,8 +309,8 @@ label-volume = " Volume %percentage%% "
 
 label-volume-foreground = ${root.foreground}
 
-label-muted = " muted "
-label-muted-foreground = #FFFFFF
+label-muted = " Volume muted "
+label-muted-foreground =  ${root.foreground}
 label-muted-background=#3b4252
 label-muted-padding=0
 bar-volume-width = 10
