@@ -69,12 +69,12 @@ padding-left = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0=Source Code Pro:pixelsize=12;2
-font-1=Iosevka Nerd Font:pixelsize=14;3
+font-0=hack:pixelsize=11;2
+font-1=Iosevka Nerd Font:pixelsize=14;3.5
 
 
 
-modules-left = workspaces 
+modules-left = workspaces bspwm
 modules-center = 
 modules-right =pulseaudio battery date
 
@@ -112,11 +112,25 @@ label-layout = %layout%
 
 label-indicator-padding= 0
 
+
+[module/bspwm]
+
+type=internal/bspwm
+inline-mode = false
+format =<label-mode>
+
+
+
+label-monocle = Monocle 
+label-monocle-background=#434c5e
+label-monocle-padding =1
+
+
 [module/workspaces]
 type = internal/xworkspaces
 pin-workspaces = false
 enable-click = true
-enable-scroll = true
+enable-scroll = faske 
 format-padding = 1
 
 ;icon-0 = 1;❶
@@ -134,7 +148,8 @@ icon-default = 
 
 format = <label-state>
 
-format-background  =#434C5E
+format-background  =#4c566a
+
 label-active = 
 label-occupied = 
 label-urgent = 

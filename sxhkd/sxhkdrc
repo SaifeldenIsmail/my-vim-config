@@ -14,6 +14,29 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super +shift+ r
+	bspc node @/ -R 90
+super + r
+	bspc node @/ -R 180
+
+
+super +shift+ p
+	killall polybar && polybar example
+
+
+
+super + n
+	alacritty -e sh -c "sleep 0.1 && nvim"
+
+super + w
+	firefox 
+
+super + shift + w
+	brave
+
+
+
+
 #
 # bspwm hotkeys
 #
@@ -23,7 +46,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -53,6 +76,8 @@ super + ctrl + {m,x,y,z}
 #
 # focus/swap
 #
+#change all window states in the current workspace
+
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
