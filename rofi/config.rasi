@@ -5,12 +5,13 @@
     background-color:      rgba ( 59, 66, 82, 100 % );
     border-color:          rgba ( 59, 66, 82, 100 % );
     text-color:            rgba ( 216, 222, 233, 85 % );
-    font:            "Source Code Pro 11";
+    font:            "hack 11";
 }
  
 #window {
     anchor:     north;
     location:   north;
+    padding:2px 0px 0px 0px;
     width:      100%;
     height:23px;
     children:   [ horibox ];
@@ -35,14 +36,12 @@ padding: 0px 15px;
  
 #entry {
     expand:     false;
-    padding:0px 10px 4px;
-    blink:false;
     width:      8em;
     
 }
  
 #element {
-    padding: 0px 7px 4px;
+    padding: 0px 7px 1px 7px;
 }
 #element selected {
     background-color: #4c566a;

@@ -14,9 +14,9 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
-super +shift+ r
-	bspc node @/ -R 90
 super + r
+	bspc node @/ -R 90
+super +shift+ r
 	bspc node @/ -R 180
 
 
@@ -27,9 +27,6 @@ super +shift+ p
 
 super + n
 	alacritty -e sh -c "sleep 0.1 && nvim"
-
-super + w
-	firefox 
 
 super + shift + w
 	brave
