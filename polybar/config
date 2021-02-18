@@ -49,8 +49,9 @@ alert = #BF616A
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 border-bottom-size = 0
-border-bottom-color = #4c566a
-height = 23
+border-bottom-color = #3B4252
+
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
 radius	 = 0 
@@ -69,8 +70,8 @@ padding-left = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0=hack:pixelsize=11;2
-font-1=Iosevka Nerd Font Mono:pixelsize=22;5
+font-0=hack:pixelsize=10;2
+font-1=Iosevka Nerd Font Mono:pixelsize=21;4
 
 
 
@@ -105,10 +106,9 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 format-padding= 1
 format-background  =#434C5E
-format-prefix = "Keyb "
 format-prefix-foreground = ${colors.foreground-alt}
 
-label-layout = %layout%
+label-layout = Keyb %layout%
 
 label-indicator-padding= 0
 
@@ -163,6 +163,7 @@ label-empty-padding-right= 1
 label-empty-foreground = #D8DEE9 
 label-active-foreground =#d8dee9
 label-urgent-foreground =  #bf616a
+
 label-occupied-foreground =#d8dee9 
 
 [module/i3]
