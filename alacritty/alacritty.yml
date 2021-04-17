@@ -36,22 +36,22 @@ colors:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: hack
+    family: Jetbrains Mono
     # Style can be specified to pick a specific face.
     style: Regular
    
-  size: 11
+  size: 10
 
   #The bold font face
   bold:
-    family: hack 
-    style: Bold 
+    family: Jetbrains Mono
+    style: Medium
     # Style can be specified to pick a specific face.
     
 
   # The italic font face
   italic:
-    family: hack 
+    family: Jetbrains Mono
     style: Italic
     # Style can be specified to pick a specific face.
   
@@ -60,4 +60,7 @@ window:
   padding:
     x: 7
     y: 7
+cursor:
+  style:
+    blinking: On
 

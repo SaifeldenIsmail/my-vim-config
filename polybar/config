@@ -70,17 +70,18 @@ padding-left = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0=hack:pixelsize=10;2
-font-1=Iosevka Nerd Font Mono:pixelsize=21;4
+font-0=Jetbrains Mono:pixelsize=10:style=medium;2
 
 
 
 modules-left = workspaces bspwm
-modules-center = 
+modules-center = xwindow
 modules-right =pulseaudio battery date
 
 tray-margin=0
-;tray-position = right 
+;tray-position = center
+
+
 
 tray-padding= 8 
 tray-background = #3B4252
@@ -100,7 +101,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:35:...%
+label = %title:0:40:...%
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -145,16 +146,17 @@ format-padding= 0
 ;icon-9 = 10;❿
 
 
-format = <label-state>
+format =<label-state>
 label-state-padding=1
 label-active-padding-right= 1
 label-urgent-padding-right= 1
-
 label-occupied-padding-right= 1
 label-empty-padding-right= 1
-label-empty-foreground = #8e939e
+label-empty=
+label-empty-foreground = #b6bac2
 
-label-empty-background=#3B4252
+label-empty-background=#2E3440
+
 label-occupied-background=#3B4252
 label-active-foreground =#ECEFF4
 
@@ -306,8 +308,9 @@ background-next=#3B4252
 date = Time 
 date-alt = "%A %Y/%m/%d"
 
-time = %H%M
-time-alt = %H%M
+time = %H:%M
+
+time-alt = %H:%M
 
 
 label =" %date% %time% "
@@ -358,7 +361,7 @@ full-at = 98
 
 format-background=#434C5E
 
-label-full="%percentage% "
+label-full="%percentage%"
 label-charging ="%percentage% "
 label-discharging ="%percentage% "
 discharging-background=#434c5e

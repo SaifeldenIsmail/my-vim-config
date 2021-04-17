@@ -3,12 +3,24 @@
 #
 
 # terminal emulator
+#
+#
+#
+#
 super + Return
 	alacritty
 
+super + k + a
+	setxkbmap ara
+
+super + k + e
+	setxkbmap us
+
+
+
 # program launcher
 super + d
-	rofi -show run
+	rofi -show run -display-run ">>>"
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -145,7 +157,10 @@ super + {Left,Down,Up,Right}
 
 
 super + shift + s 
-	scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+	flameshot full -p ~/Pictures/screenshots
+super + alt + s 
+	flameshot gui 
+
 
 
 

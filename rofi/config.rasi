@@ -2,18 +2,17 @@
  * D-Nord : Rofi dmenu theme using the nord pallette
  */
 * {
-    background-color:      rgba ( 59, 66, 82, 100 % );
+    background-color:      #2E3440;
     border-color:          rgba ( 59, 66, 82, 100 % );
     text-color:            rgba ( 216, 222, 233, 85 % );
-    font:            "hack 10";
+    font:            "Jetbrains Mono 10";
 }
  
 #window {
     anchor:     north;
     location:   north;
-    padding:2px 0px 0px 0px;
+    padding:1px 0px 0px 0px;
     width:      100%;
-    height:22px;
     children:   [ horibox ];
 }
  
@@ -22,7 +21,7 @@
     children:   [ prompt, entry, listview ];
 }
 #prompt{
-padding: 1px 7px;
+padding: 0px 7px;
 
 }
 
@@ -36,7 +35,7 @@ padding: 1px 7px;
  
 #entry {
     expand:     false;
-    width:      8em;
+    width:      10em;
     
 }
  
@@ -44,6 +43,6 @@ padding: 1px 7px;
     padding: 0px 7px 1px 7px;
 }
 #element selected {
-    background-color: #4c566a;
+    background-color: #3B4252;
     text-color: rgba ( 216, 222, 233, 100 % );
 }
