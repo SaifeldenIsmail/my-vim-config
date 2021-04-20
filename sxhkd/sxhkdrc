@@ -16,6 +16,12 @@ super + k + a
 super + k + e
 	setxkbmap us
 
+super + shift + m
+	xrandr --output LVDS-1 --primary --mode 1366x768 --rotate normal --output HDMI-1 --off
+
+super + alt + m
+	xrandr --output LVDS-1 --primary --mode 1366x768 --rotate normal --output HDMI-1 --mode 1360x768 --rotate normal --right-of LVDS-1
+
 
 
 # program launcher
