@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>Alacritty</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1608828188895097-1</unique-id>
+	<command>alacritty  --working-directory %f</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon></icon>
+	<name>run as exe</name>
+	<unique-id>1615491210065814-1</unique-id>
+	<command>wine %N</command>
+	<description></description>
+	<patterns>*</patterns>
+</action>
+</actions>
