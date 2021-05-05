@@ -1,0 +1,51 @@
+.thunar {
+-gtk-icon-style: regular;
+}
+
+VteTerminal,
+TerminalScreen,
+vte-terminal {
+    padding: 7px 7px 7px 7px;
+    -VteTerminal-inner-border: 7px 7px 7px 7px;
+}
+headerbar {
+        background-color:       #373e4d;
+        
+  }
+@define-color decoration_border_color      #373e4d;
+@define-color decoration_border_color_unfocused      #373e4d;
+
+/* focused window */
+decoration {
+    border: 0px solid @decoration_border_color;
+    background: @decoration_border_color;
+
+    /* switch colors smoothly with a transition animation */
+    transition: border-color ease-in 0.2s, background-color ease-in 0.2s;
+}
+
+/* unfocused window */
+decoration:backdrop {
+    border-color: @decoration_border_color_unfocused;
+    background-color: @decoration_border_color_unfocused;
+}
+
+/* focused window (server-side rendering hack) */
+.ssd .titlebar {
+    border: 0px solid @decoration_border_color;
+    border-bottom: none;
+
+    /* transition animation does not seem to work with server-side rendering */
+    /* transition: border-color ease-in 0.2s; */
+}
+
+/* unfocused window (server-side rendering hack) */
+.ssd .titlebar:backdrop {
+    border-color: @decoration_border_color_unfocused;
+}
+
+/* remove borders of maximized windows */
+.maximized decoration,
+.ssd.maximized .titlebar {
+    border: none
+}
