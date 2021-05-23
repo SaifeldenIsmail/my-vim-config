@@ -7,7 +7,7 @@
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
-let s:nord0 = ["#2E3440", "NONE"]
+let s:nord0 = ["2E3440", "NONE"]
 let s:nord1 = ["#3B4252", 0]
 let s:nord2 = ["#434C5E", "NONE"]
 let s:nord3 = ["#4C566A", 8]
@@ -23,6 +23,8 @@ let s:nord12 = ["#D08770", 11]
 let s:nord13 = ["#EBCB8B", 3]
 let s:nord14 = ["#A3BE8C", 2]
 let s:nord15 = ["#B48EAD", 5]
+let s:nord16 = ["NONE", "NONE"]
+
 let s:nord3_bright = ["#616E88", 8]
 
 let s:p.normal.warning = [ [ s:nord1, s:nord13 ] ]
@@ -40,9 +42,9 @@ let s:p.visual.left = [ [ s:nord1, s:nord7 ], [ s:nord5, s:nord1 ] ]
 
 
 
-let s:p.tabline.left = [[ s:nord2, s:nord0 ], [ s:nord4, s:nord1, 'bold' ]]
-let s:p.tabline.middle = [[ s:nord0, s:nord0 ]]
-let s:p.tabline.right = [[ s:nord3_bright, s:nord0, 'bold' ]]
+let s:p.tabline.left = [[ s:nord2, s:nord16 ], [ s:nord4, s:nord1, 'bold' ]]
+let s:p.tabline.middle = [[ s:nord16, s:nord16 ]]
+let s:p.tabline.right = [[ s:nord3_bright, s:nord16, 'bold' ]]
 let s:p.tabline.tabsel = [[ s:nord4, s:nord3, 'bold' ]]
 
 
