@@ -2,7 +2,7 @@ set number relativenumber
 set noswapfile
 set nocompatible              " required
 filetype off                  " required
-set showtabline=0
+"set showtabline=0
 set hidden 
 set autoindent
 set guicursor=
@@ -94,3 +94,12 @@ endfunction
 
 hi Normal guibg=NONE ctermbg=NONE
 
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+set splitbelow
+set splitright
