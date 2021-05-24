@@ -46,6 +46,11 @@ set encoding=utf-8
 
 scriptencoding utf-8
 
+let g:fzf_layout = { 'down': '~40%' }
+autocmd! FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+
 let g:fzf_colors =
             \ { 'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
