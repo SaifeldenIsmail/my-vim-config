@@ -28,11 +28,10 @@ colorscheme nord
 set mouse=a
 au BufReadPost,BufNewFile *.js,*.ts, Codi 
 set cursorline
-:nmap <space>e :CocCommand explorer --width 30<CR>
+:nmap <space>e :CocCommand explorer<CR>
 " - Popup window (anchored to the bottom of the current window)
 :nmap <C-p> :FZF <CR>
 :nmap <C-o> :Rg <CR>
-
 map <S-y> :tabnew<CR>
 map <S-n> :tabn<CR>
 map ZW :wq!<CR>
@@ -106,5 +105,3 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 
-set splitbelow
-set splitright
