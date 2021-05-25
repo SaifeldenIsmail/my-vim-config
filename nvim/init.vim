@@ -29,6 +29,7 @@ set mouse=a
 au BufReadPost,BufNewFile *.js,*.ts, Codi 
 set cursorline
 :nmap <space>e :CocCommand explorer<CR>
+:nmap ZE :q!<CR>
 " - Popup window (anchored to the bottom of the current window)
 :nmap <C-p> :FZF <CR>
 :nmap <C-o> :Rg <CR>
@@ -79,6 +80,7 @@ let g:lightline = {
 
 " Switch to English - mapping
 nnoremap <Leader>e :<C-U>call EngType()<CR>
+nnoremap <Tab> :bnext<CR>
 " Switch to Arabic - mapping
 nnoremap <Leader>a :<C-U>call AraType()<CR>
 
