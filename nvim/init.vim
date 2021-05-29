@@ -14,6 +14,7 @@ set termguicolors
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch':'release'}
+Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'yuttie/comfortable-motion.vim'      " Smooth scrolling
 Plug 'thaerkh/vim-indentguides'           " Visual representation of indents
@@ -106,4 +107,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+let g:user_emmet_mode="n"
+let g:user_emmet_leader_key=","
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
