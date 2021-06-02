@@ -27,7 +27,6 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 colorscheme nord
 set mouse=a
-au BufReadPost,BufNewFile *.js,*.ts, Codi 
 set cursorline
 :nmap <space>e :CocCommand explorer<CR>
 :nmap ZE :q!<CR>
@@ -110,5 +109,5 @@ nnoremap <C-H> <C-W><C-H>
 let g:user_emmet_mode="n"
 let g:user_emmet_leader_key=","
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+
 
