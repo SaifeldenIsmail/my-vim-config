@@ -54,11 +54,11 @@
 
 (custom-set-faces
  '(org-block-begin-line
-   ((t (:background "#2E3440"))))
+   ((t (:background "#323845"))))
  '(org-block
-   ((t (:background "#2E3440"))))
+   ((t (:background "#323845"))))
  '(org-block-end-line
-   ((t (:background "#2E3440"))))
+   ((t (:background "#323845"))))
  )
 
 
@@ -88,7 +88,9 @@
 
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
-(add-hook! '+doom-dashboard-mode-hook (hide-mode-line-mode 1) (hl-line-mode -1))
-(setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
+(add-hook! '+doom-dashboard-mode-hook  (hl-line-mode -1))
 
+;;(hide-mode-line-mode 1)
+(setq-hook! '+doom-dashboard-mode-hook evil-normal-state-cursor (list nil))
+(setq-default window-divider-default-bottom-width 0)
 
