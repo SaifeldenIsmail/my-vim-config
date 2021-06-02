@@ -22,7 +22,7 @@
 ;;(powerline-default-theme)
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
- (setq doom-font (font-spec :family "Jetbrains Mono" :size 12 :weight 'Regular)
+ (setq doom-font (font-spec :family "Jetbrains Mono" :size 12 :weight 'Medium)
        doom-variable-pitch-font (font-spec :family "Jetbrains Mono" :size 12))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -30,12 +30,15 @@
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-nord)
 ;;
-(custom-set-faces!
-  `(vertical-border :foreground ,(doom-color 'base4)))
+;;(custom-set-faces!
+;;  `(vertical-border :foreground ,(doom-color 'base4)))
 
 
 (custom-set-faces!
   `(highlight :background, (doom-color 'green)))
+
+(custom-set-faces!
+  `(doom-modeline-bar :background ,(doom-color 'green)))
 
 
 
@@ -49,6 +52,14 @@
   `(fringe :foreground ,(doom-color 'base2)))
 
 
+(custom-set-faces
+ '(org-block-begin-line
+   ((t (:background "#2E3440"))))
+ '(org-block
+   ((t (:background "#2E3440"))))
+ '(org-block-end-line
+   ((t (:background "#2E3440"))))
+ )
 
 
 
@@ -65,7 +76,7 @@
 (setq display-line-numbers-type `relative)
 
 
-(setq doom-modeline-height 25)
+(setq doom-modeline-height 23)
 
 (setq doom-modeline-modal-icon nil)
 
