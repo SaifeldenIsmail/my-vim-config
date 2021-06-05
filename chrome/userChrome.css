@@ -1,0 +1,6 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
+
+.tabbrowser-tab .tab-icon-image,
+.tabbrowser-tab .tab-throbber { display:none!important; }
+
+#personal-bookmarks .toolbarbutton-icon { display:none!important; }
