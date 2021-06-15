@@ -4,9 +4,14 @@
 .tabbrowser-tab .tab-throbber { display:none!important; }
 
 #personal-bookmarks .toolbarbutton-icon { display:none!important; }
-/* #tabbrowser-tabs .tab-text{
- font-size:11pt !important;
-}
-/*#urlbar-container { font-size:11pt important; }*/
 
-#sidebar-splitter { min-width: 1px !important; max-width: 1px !important; }
+:-moz-any(#content,#appcontent) browser{
+ margin-right:-14px!important;
+ overflow-y:scroll;
+ margin-bottom:-14px!important;
+ overflow-x:scroll;
+}
+#sidebar-splitter { min-width: 1px !important; max-width: 1px !important; opacity:0.7; }
+#star-button{
+display:none;
+}
