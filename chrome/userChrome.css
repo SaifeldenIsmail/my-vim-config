@@ -1,6 +1,20 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* only needed once */
 
-.tabbrowser-tab .tab-icon-image,
-.tabbrowser-tab .tab-throbber { display:none!important; }
 
 #personal-bookmarks .toolbarbutton-icon { display:none!important; }
+
+
+.urlbarView-row[type=bookmark] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon,
+.urlbarView-row[pinned] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon,
+.urlbarView:not([actionoverride]) .urlbarView-row[type=switchtab] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon,
+.urlbarView-row[type=remotetab] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-type-icon {
+ display: none !important;
+}
+#TabsToolbar #tabbrowser-tabs .tabbrowser-tab:not([pinned]) .tab-icon-image {
+ display: none !important;
+}
+
+#sidebar-splitter { min-width: 1px !important; max-width: 1px !important; opacity:0.7; }
+#star-button{
+display:none;
+}
